@@ -86,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
                 updateQuestion();
             }
         });
+        mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
+        mQuestionTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = (mCurrentIndex + 1) % mAnswerKey.length;
+                // int question=mAnswerKey[mCurrentIndex].getQuestion();
+                // mQuestionTextView.setText(question);
+                updateQuestion();
+            }
+        });
 
         updateQuestion();
 
